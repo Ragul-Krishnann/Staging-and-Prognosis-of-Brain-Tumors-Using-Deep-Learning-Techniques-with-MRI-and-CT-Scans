@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: auto;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;   /* ✅ ENABLE SCROLL */
+}
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: #050810;
+  color: #E8EDF5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* ❌ REMOVE overflow: hidden */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(99,179,237,0.15); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(99,179,237,0.3); }
+
+/* Selection */
+::selection { background: rgba(79,195,247,0.25); color: #E8EDF5; }
+
+/* Focus outline */
+:focus-visible { outline: 1.5px solid rgba(79,195,247,0.5); outline-offset: 2px; border-radius: 4px; }
+
+/* Remove number input arrows */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+/* Range slider thumb – global */
+input[type='range'] { cursor: pointer; }
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  background: #4FC3F7;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(79,195,247,0.55);
+  transition: transform 0.18s;
+}
+input[type='range']::-webkit-slider-thumb:hover { transform: scale(1.35); }
+input[type='range']::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  background: #4FC3F7;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(79,195,247,0.55);
+}
